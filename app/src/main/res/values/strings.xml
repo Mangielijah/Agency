@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Agency</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vip">VIP</string>
+    <string name="classic">Classic</string>
+    <string name="route">Route</string>
+    <string name="validate">Validate</string>
+    <string name="sms_reminder">SMS Reminder</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="password_too_short">Password is too short</string>
+    <string name="username_empty">Fill in your username</string>
+    <string name="logout">Logout</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="title_activity_route">Route</string>
+    <string name="destination">Destination</string>
+    <string name="add_route">Add route</string>
+    <string name="fare">Fare</string>
+    <string name="travel_time">Select departure periods</string>
+    <string name="morning">Morning</string>
+    <string name="night">Night</string>
+    <string name="afternoon">Afternoon</string>
+    <string name="destination_error">Fill in destination</string>
+    <string name="fare_error">Fill in travel fare</string>
+    <string name="travel_time_error">Please select take-off times</string>
+    <string name="route_added">Route added successfully</string>
+    <string name="route_failed">Failed: Network Problem</string>
+    <string name="no_route">No travel route</string>
+</resources>
