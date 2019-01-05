@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Code: 465026414"
+            android:textColor="@color/black"
+            android:fontFamily="@font/berlin_sans_fb_regular"
+            android:id="@+id/code"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_below="@id/code"
+            android:id="@+id/name"
+            android:text="Mangi Elijah"
+            android:fontFamily="@font/berlin_sans_fb_regular"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:id="@+id/id"
+            android:layout_below="@id/code"
+            android:layout_toRightOf="@id/name"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="@font/berlin_sans_fb_regular"
+            android:text="ID: 000157931"/>
+</RelativeLayout>

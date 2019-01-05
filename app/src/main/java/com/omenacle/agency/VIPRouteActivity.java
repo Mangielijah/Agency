@@ -30,15 +30,12 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.omenacle.agency.Adapters.RouteAdapter;
 import com.omenacle.agency.DataClasses.Route;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-public class RouteActivity extends AppCompatActivity {
+public class VIPRouteActivity extends AppCompatActivity {
 
     String agencyKey, branch, branchLocation, branchKey;
     FirebaseUser currentUser;
@@ -77,7 +74,7 @@ public class RouteActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new RouteAdapter(recyclerView, routeList, mDatabase.child("r"));
+        adapter = new RouteAdapter(recyclerView, routeList, mDatabase.child("vr"));
         recyclerView.setAdapter(adapter);
 
 
@@ -85,7 +82,7 @@ public class RouteActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(RouteActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(VIPRouteActivity.this);
                 final View v = getLayoutInflater().inflate(R.layout.add_route_dialog, null);
 
                 //Initialiase Views here
@@ -157,18 +154,18 @@ public class RouteActivity extends AppCompatActivity {
         pd.setCanceledOnTouchOutside(false);
         pd.setCancelable(false);
         pd.show();
-        String key = mDatabase.child("r").push().getKey();
+        String key = mDatabase.child("vr").push().getKey();
         Route newRoute = new Route(agencyKey, branchKey, key, Long.parseLong(fare), route, travel_time);
         if (key != null) {
-            mDatabase.child("r").child(key).setValue(newRoute).addOnCompleteListener(new OnCompleteListener<Void>() {
+            mDatabase.child("vr").child(key).setValue(newRoute).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         pd.dismiss();
-                        Toast.makeText(RouteActivity.this, getString(R.string.route_added), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(VIPRouteActivity.this, getString(R.string.route_added), Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        Toast.makeText(RouteActivity.this, getString(R.string.route_failed), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(VIPRouteActivity.this, getString(R.string.route_failed), Toast.LENGTH_SHORT).show();
                         pd.dismiss();
                     }
                 }
@@ -177,7 +174,7 @@ public class RouteActivity extends AppCompatActivity {
     }
 
     private ArrayList<Route> retrieveRoutes(){
-        mDatabase.child("r").orderByChild("b_k").equalTo(branchKey).addChildEventListener(new ChildEventListener() {
+        mDatabase.child("vr").orderByChild("b_k").equalTo(branchKey).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 fetchData(dataSnapshot);

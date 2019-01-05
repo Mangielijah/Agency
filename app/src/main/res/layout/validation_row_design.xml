@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:orientation="horizontal"
+    android:weightSum="10">
+    <RelativeLayout
+        android:layout_weight="7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:text="Code: 465026414"
+            android:textColor="@color/black"
+            android:fontFamily="@font/berlin_sans_fb_regular"
+            android:id="@+id/code"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_below="@id/code"
+            android:id="@+id/name"
+            android:text="Mangi Elijah"
+            android:fontFamily="@font/berlin_sans_fb_regular"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/id"
+            android:layout_below="@id/name"
+            android:fontFamily="@font/berlin_sans_fb_regular"
+            android:text="ID: 000157931"/>
+    </RelativeLayout>
+    <ImageButton
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/checked"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/btnValidate"
+        />
+</LinearLayout>

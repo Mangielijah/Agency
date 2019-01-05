@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="4dp">
     <ImageView
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:padding="10dp"
-        android:src="@drawable/route_btn_icon"
+        app:srcCompat="@drawable/route_btn_icon"
         android:background="@color/colorPrimary"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,8 +29,9 @@
                 android:paddingLeft="4dp"
                 android:id="@+id/routeTextView"
                 android:textStyle="bold"
-                android:fontFamily="@font/berlin_sans_fb_regular"
-                android:paddingStart="4dp" />
+                app:fontFamily="@font/berlin_sans_fb_regular"
+                android:paddingStart="4dp"
+                tools:ignore="RtlSymmetry" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,7 +41,7 @@
                 android:id="@+id/priceTextView"
                 android:text=""
                 android:textSize="18sp"
-                android:fontFamily="@font/berlin_sans_fb_regular"
+                app:fontFamily="@font/berlin_sans_fb_regular"
                 android:layout_below="@id/routeTextView"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -48,7 +52,7 @@
                 android:id="@+id/timeTextView"
                 android:text=""
                 android:textSize="14sp"
-                android:fontFamily="@font/berlin_sans_fb_regular"
+                app:fontFamily="@font/berlin_sans_fb_regular"
                 android:layout_below="@id/priceTextView"/>
         </RelativeLayout>
         <ImageView
@@ -57,6 +61,6 @@
             android:padding="16dp"
             android:layout_weight="2.5"
             android:id="@+id/deletebtn"
-            android:src="@drawable/delete_icon"/>
+            app:srcCompat="@drawable/delete_icon"/>
     </LinearLayout>
 </LinearLayout>

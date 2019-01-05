@@ -30,4 +30,11 @@
     <string name="route_added">Route added successfully</string>
     <string name="route_failed">Failed: Network Problem</string>
     <string name="no_route">No travel route</string>
+    <string name="title_activity_validation">ValidationActivity</string>
+    <string name="validae">VALIDATE</string>
+    <string name="validated">VALIDATED</string>
+    <string name="fetching_routes_available">Fetching your routes</string>
+    <string name="select_route">Select route</string>
+    <string name="validation">Validation</string>
+    <string name="ticket">Ticket</string>
 </resources>
