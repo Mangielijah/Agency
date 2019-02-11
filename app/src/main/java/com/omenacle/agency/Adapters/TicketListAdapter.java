@@ -1,5 +1,6 @@
 package com.omenacle.agency.Adapters;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,6 +25,7 @@ public class TicketListAdapter extends RecyclerView.Adapter<TicketListAdapter.Vi
     private RecyclerView recyclerView;
     private DatabaseReference mDatabase;
     private InfoAdapterInterface adapterInterface;
+    Context ctx;
 
     public TicketListAdapter(RecyclerView recyclerView, ArrayList<Ticket> tickets, DatabaseReference mDatabase, InfoAdapterInterface adapterInterface) {
         this.tickets = tickets;
@@ -35,6 +37,7 @@ public class TicketListAdapter extends RecyclerView.Adapter<TicketListAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+        ctx = parent.getContext();
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.validation_row_design, parent, false);
         return new ViewHolder(v);
 
@@ -44,7 +47,11 @@ public class TicketListAdapter extends RecyclerView.Adapter<TicketListAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.codeView.setText("Code: " + String.valueOf(tickets.get(i).getCode()));
         viewHolder.nameView.setText(tickets.get(i).getName());
-        viewHolder.idView.setText("ID: " + tickets.get(i).getId());
+        if(tickets.get(i).getId() == 1){
+            viewHolder.idView.setText(ctx.getResources().getText(R.string.no_idcard));
+        }else{
+            viewHolder.idView.setText("ID: " + tickets.get(i).getId());
+        }
     }
 
     @Override
@@ -68,7 +75,7 @@ public class TicketListAdapter extends RecyclerView.Adapter<TicketListAdapter.Vi
                     String key = String.valueOf(tickets.get(pos).getCode());
                     Ticket newTicket = tickets.get(pos);
                     newTicket.setStatus("u");
-                    mDatabase.child("t").child(key).setValue(newTicket).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mDatabase.child(key).setValue(newTicket).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){

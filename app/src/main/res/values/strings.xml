@@ -37,4 +37,13 @@
     <string name="select_route">Select route</string>
     <string name="validation">Validation</string>
     <string name="ticket">Ticket</string>
+    <string name="no_idcard">No id card</string>
+    <string name="seats">Seats</string>
+    <string name="time_e_g_6am">Time (e.g 6am)</string>
+    <string name="time_e_g_3pm">Time (e.g 3pm)</string>
+    <string name="time_e_g_6pm">Time (e.g 6pm)</string>
+    <string name="available_seats">Available seats</string>
+    <string name="remove">Remove</string>
+    <string name="add">Add</string>
+    <string name="enter_seat_add_remove">Enter seat (Add/Remove)</string>
 </resources>

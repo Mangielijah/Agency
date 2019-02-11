@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -91,6 +92,9 @@ public class VIPRouteActivity extends AppCompatActivity {
                 final CheckBox morningCheckBox = v.findViewById(R.id.checkboxMorning);
                 final CheckBox afternoonCheckBox = v.findViewById(R.id.checkboxAfternoon);
                 final CheckBox nightCheckBox = v.findViewById(R.id.checkboxNight);
+                /*final EditText morningTime = v.findViewById(R.id.morningTime);
+                final EditText afternoonTime = v.findViewById(R.id.afternoonTime);
+                final EditText nightTime = v.findViewById(R.id.nightTime);*/
                 Button addRouteBtn = v.findViewById(R.id.btn_add);
 
                 builder.setView(v);
@@ -109,13 +113,13 @@ public class VIPRouteActivity extends AppCompatActivity {
                                 if(!((!morningCheckBox.isChecked() && !afternoonCheckBox.isChecked()) && !nightCheckBox.isChecked()))
                                 {
                                    if(morningCheckBox.isChecked()){
-                                       result.append("morning");
+                                       result.append("morning(6am)");
                                    }
                                    if(afternoonCheckBox.isChecked()){
-                                       result.append("_afternoon");
+                                       result.append("_afternoon(3pm)");
                                    }
                                    if(nightCheckBox.isChecked()){
-                                       result.append("_night");
+                                       result.append("_night(6pm)");
                                    }
 
                                    if(result.charAt(0) == '_'){

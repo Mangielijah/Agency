@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.omenacle.agency">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
         android:name=".FirebaseApp"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -43,15 +43,19 @@
         <activity
             android:name=".ValidationActivity"
             android:label="@string/validation"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VIPValidationActivity"
             android:label="@string/validation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".RouteSelectionActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".VIPRouteSelectionActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RouteSelectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VIPRouteSelectionActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".SeatsActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".VipSeatsActivity" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

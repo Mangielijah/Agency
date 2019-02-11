@@ -75,40 +75,108 @@
         android:textSize="18sp"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:orientation="horizontal">
 
-    <CheckBox
+        <CheckBox
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:textSize="18sp"
+            android:layout_marginTop="2dp"
+            android:text="@string/morning"
+            android:id="@+id/checkboxMorning"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="0.5"
+            app:fontFamily="@font/berlin_sans_fb_regular"
+            android:layout_marginStart="16dp" />
+        <EditText
+            android:id="@+id/morningTime"
+            android:inputType="text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_weight="0.5"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:hint="@string/time_e_g_6am"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/colorPrimary"
+            android:foregroundTint="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:textSize="18sp"
-        android:layout_marginTop="2dp"
-        android:text="@string/morning"
-        android:id="@+id/checkboxMorning"
-        android:layout_marginBottom="8dp"
-        app:fontFamily="@font/berlin_sans_fb_regular"/>
-    <CheckBox
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:textSize="18sp"
+            android:layout_marginTop="2dp"
+            android:text="@string/afternoon"
+            android:id="@+id/checkboxAfternoon"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="0.5"
+            app:fontFamily="@font/berlin_sans_fb_regular"
+            android:layout_marginStart="16dp" />
+        <EditText
+            android:id="@+id/afternoonTime"
+            android:inputType="text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_weight="0.5"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:hint="@string/time_e_g_3pm"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/colorPrimary"
+            android:foregroundTint="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:textSize="18sp"
-        android:layout_marginTop="2dp"
-        android:text="@string/afternoon"
-        android:id="@+id/checkboxAfternoon"
-        android:layout_marginBottom="8dp"
-        app:fontFamily="@font/berlin_sans_fb_regular" />
-    <CheckBox
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:textSize="18sp"
-        android:layout_marginTop="4dp"
-        android:text="@string/night"
-        android:id="@+id/checkboxNight"
-        android:layout_marginBottom="4dp"
-        app:fontFamily="@font/berlin_sans_fb_regular" />
+        android:weightSum="1"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:textSize="18sp"
+            android:layout_marginTop="4dp"
+            android:text="@string/night"
+            android:id="@+id/checkboxNight"
+            android:layout_weight="0.5"
+            android:layout_marginBottom="4dp"
+            app:fontFamily="@font/berlin_sans_fb_regular"
+            android:layout_marginStart="16dp" />
+        <EditText
+            android:id="@+id/nightTime"
+            android:inputType="text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_weight="0.5"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:hint="@string/time_e_g_6pm"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/colorPrimary"
+            android:foregroundTint="@color/colorPrimary"/>
+
+    </LinearLayout>
+
 
     <Button
         android:layout_width="match_parent"

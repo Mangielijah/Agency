@@ -59,13 +59,6 @@ public class RouteSelectionActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser currentUser) {
         branch_key = currentUser.getUid();
-        if(mRouteList.isEmpty()){
-        /*
-
-            Getting the routes from firebase online and adding it
-            to the list of routes
-
-         */
             getRoutes(new OnGetFirebaseDataListener() {
                 @Override
                 public void onStart() {
@@ -79,9 +72,9 @@ public class RouteSelectionActivity extends AppCompatActivity {
 
                 @Override
                 public void onSuccess(DataSnapshot dataSnapshot) {
+                    mRouteList.clear();
                     for (DataSnapshot routeSnapshot : dataSnapshot.getChildren()){
                         Route mRoute = routeSnapshot.getValue(Route.class);
-                        Log.d("LocationFragment", mRoute.toString());
                         if (mRoute.getB_k().equals(branch_key)){
                             mRouteList.add(mRoute);
                         }
@@ -103,11 +96,6 @@ public class RouteSelectionActivity extends AppCompatActivity {
                     pd.dismiss();
                 }
             });
-
-        }
-        else{
-
-        }
     }
 
     void getRoutes(final OnGetFirebaseDataListener listener){

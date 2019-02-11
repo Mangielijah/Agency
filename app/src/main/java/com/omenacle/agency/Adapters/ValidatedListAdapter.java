@@ -1,5 +1,6 @@
 package com.omenacle.agency.Adapters;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,8 +18,10 @@ public class ValidatedListAdapter extends RecyclerView.Adapter<ValidatedListAdap
     private ArrayList<Ticket> tickets;
     private RecyclerView recyclerView;
     private InfoAdapterInterface adapterInterface;
+    Context ctx;
 
     public ValidatedListAdapter(RecyclerView recyclerView, ArrayList<Ticket> tickets, InfoAdapterInterface adapterInterface) {
+
         this.tickets = tickets;
         this.recyclerView = recyclerView;
         this.adapterInterface = adapterInterface;
@@ -27,6 +30,7 @@ public class ValidatedListAdapter extends RecyclerView.Adapter<ValidatedListAdap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+        ctx = parent.getContext();
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.validated_row_design, parent, false);
         return new ViewHolder(v);
 
@@ -36,7 +40,11 @@ public class ValidatedListAdapter extends RecyclerView.Adapter<ValidatedListAdap
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.codeView.setText("Code: " + String.valueOf(tickets.get(i).getCode()));
         viewHolder.nameView.setText(tickets.get(i).getName());
-        viewHolder.idView.setText("ID: " + tickets.get(i).getId());
+        if(tickets.get(i).getId() == 1){
+            viewHolder.idView.setText(ctx.getResources().getText(R.string.no_idcard));
+        }else{
+            viewHolder.idView.setText("ID: " + tickets.get(i).getId());
+        }
     }
 
     @Override

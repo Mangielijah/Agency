@@ -46,11 +46,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "741084555946-oubdsotei63ju1me6nt7e3bbcvq11shn.apps.googleusercontent.com",
+          "client_id": "741084555946-chkmdg9vq8or5kqprfjavnra9kvsj0ic.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.omenacle.bookaam",
-            "certificate_hash": "3dd69f6249520714dff351618128e6327102799e"
+            "certificate_hash": "48ab983ce5e35b9c77585f398f9c21988a554b44"
           }
         },
         {

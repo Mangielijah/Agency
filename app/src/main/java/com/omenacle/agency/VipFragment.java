@@ -30,7 +30,7 @@ public class VipFragment extends Fragment implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private Branch mBranch;
-    AppCompatButton btnRoute, btnValidate, btnReminder;
+    AppCompatButton btnRoute, btnValidate, btnReminder, btnSeats;
     private FirebaseUser currentUser;
 
     public VipFragment() {
@@ -59,9 +59,12 @@ public class VipFragment extends Fragment implements View.OnClickListener {
         btnRoute = layoutView.findViewById(R.id.btn_route);
         btnValidate = layoutView.findViewById(R.id.btn_validate);
         btnReminder = layoutView.findViewById(R.id.btn_notification);
+        btnSeats = layoutView.findViewById(R.id.seats);
+
         btnRoute.setOnClickListener(this);
         btnValidate.setOnClickListener(this);
         btnReminder.setOnClickListener(this);
+        btnSeats.setOnClickListener(this);
 
         return layoutView;
     }
@@ -146,6 +149,11 @@ public class VipFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_notification:
                 Toast.makeText(ctx, "SMS Reminder", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.seats:
+                Intent newIntent = new Intent(ctx, VipSeatsActivity.class);
+                newIntent.putExtra("AGENCY_KEY", mBranch.getA_k());
+                startActivity(newIntent);
                 break;
         }
 

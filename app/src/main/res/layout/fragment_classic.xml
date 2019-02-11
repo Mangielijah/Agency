@@ -50,20 +50,47 @@
                 android:layout_weight="0.5"/>
 
         </LinearLayout>
-        <android.support.v7.widget.AppCompatButton
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/btn_notification"
-            android:layout_weight="5"
-            android:drawableTop="@drawable/sms_noti_icon"
-            android:paddingTop="14dp"
-            android:paddingBottom="14dp"
-            android:background="@color/colorPrimary"
-            android:textColor="@color/white"
-            android:layout_margin="4dp"
-            android:gravity="center"
-            app:fontFamily="@font/berlin_sans_fb_regular"
-            android:text="@string/sms_reminder"/>
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp"
+            android:layout_weight="5">
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="96dp"
+                android:id="@+id/btn_notification"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/sms_noti_icon"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                app:fontFamily="@font/berlin_sans_fb_regular"
+                android:text="@string/sms_reminder"
+                tools:ignore="NestedWeights" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="96dp"
+                android:id="@+id/seats"
+                android:layout_margin="4dp"
+                android:layout_weight="0.5"
+                android:drawableTop="@drawable/seat_icon"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:fontFamily="@font/berlin_sans_fb_regular"
+                android:text="@string/seats"
+                tools:ignore="NestedWeights" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="0dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:text="@string/app_name"
+        android:textSize="36sp"
+        android:paddingTop="10dp"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"
+        app:fontFamily="@font/berlin_sans_fb_regular"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:inputType="number"
+        android:textColor="@color/bg_screen5"
+        android:gravity="center"
+        android:id="@+id/numberOfSeats"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:hint="@string/enter_seat_add_remove"
+        android:foregroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_margin="8dp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        >
+        <RadioButton
+            android:id="@+id/morning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/morning"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:id="@+id/afternoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/afternoon"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton android:id="@+id/night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/night"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="0.5"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:id="@+id/btnRemove"
+            android:text="@string/remove"
+            android:textAllCaps="false"
+            app:fontFamily="@font/berlin_sans_fb_regular"
+            android:layout_marginRight="1dp"
+            android:layout_marginEnd="1dp" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="0.5"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:id="@+id/btnAdd"
+            android:text="@string/add"
+            android:textAllCaps="false"
+            app:fontFamily="@font/berlin_sans_fb_regular"
+            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp" />
+    </LinearLayout>
+</LinearLayout>

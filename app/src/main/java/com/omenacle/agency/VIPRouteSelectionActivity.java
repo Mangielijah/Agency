@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.omenacle.agency.Adapters.LocationListAdapter;
+import com.omenacle.agency.Adapters.VIPLocationListAdapter;
 import com.omenacle.agency.DataClasses.Route;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class VIPRouteSelectionActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
     RecyclerView locationRecyclerView;
-    LocationListAdapter locationListAdapter;
+    VIPLocationListAdapter locationListAdapter;
     ProgressDialog pd;
     List<Route> mRouteList = new ArrayList<>();
     private FirebaseAuth mAuth;
@@ -42,7 +43,7 @@ public class VIPRouteSelectionActivity extends AppCompatActivity {
         locationRecyclerView = findViewById(R.id.locationRecyclerView);
         locationRecyclerView.setHasFixedSize(true);
         locationRecyclerView.setLayoutManager(new LinearLayoutManager(VIPRouteSelectionActivity.this));
-        locationListAdapter = new LocationListAdapter(mRouteList, locationRecyclerView);
+        locationListAdapter = new VIPLocationListAdapter(mRouteList, locationRecyclerView);
         locationRecyclerView.setAdapter(locationListAdapter);
     }
 
@@ -58,13 +59,7 @@ public class VIPRouteSelectionActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser currentUser) {
         branch_key = currentUser.getUid();
-        if(mRouteList.isEmpty()){
-        /*
 
-            Getting the routes from firebase online and adding it
-            to the list of routes
-
-         */
             getRoutes(new OnGetFirebaseDataListener() {
                 @Override
                 public void onStart() {
@@ -78,6 +73,7 @@ public class VIPRouteSelectionActivity extends AppCompatActivity {
 
                 @Override
                 public void onSuccess(DataSnapshot dataSnapshot) {
+                    mRouteList.clear();
                     for (DataSnapshot routeSnapshot : dataSnapshot.getChildren()){
                         Route mRoute = routeSnapshot.getValue(Route.class);
                         Log.d("LocationFragment", mRoute.toString());
@@ -102,11 +98,6 @@ public class VIPRouteSelectionActivity extends AppCompatActivity {
                     pd.dismiss();
                 }
             });
-
-        }
-        else{
-
-        }
     }
 
     void getRoutes(final OnGetFirebaseDataListener listener){

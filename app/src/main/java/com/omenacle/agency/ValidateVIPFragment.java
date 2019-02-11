@@ -107,7 +107,7 @@ public class ValidateVIPFragment extends Fragment implements AdapterView.OnItemS
         ticketRecyclerView = view.findViewById(R.id.ticketRecyclerView);
         ticketRecyclerView.setHasFixedSize(true);
         ticketRecyclerView.setLayoutManager(new LinearLayoutManager(ctx));
-        adapter = new TicketListAdapter(ticketRecyclerView, allTicket, mDatabase, adapterInterface);
+        adapter = new TicketListAdapter(ticketRecyclerView, allTicket, mDatabase.child("vt"), adapterInterface);
         ticketRecyclerView.setAdapter(adapter);
 
         DividerItemDecoration itemDecor = new DividerItemDecoration(ctx, VERTICAL);
